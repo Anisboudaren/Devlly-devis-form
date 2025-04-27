@@ -1,5 +1,5 @@
 "use client"
-
+import clsx from 'clsx';
 import type { FormData, WebsiteType } from "../multi-step-form"
 import { motion } from "framer-motion"
 import { ShoppingCart, ImageIcon, FileText, Building2 } from "lucide-react"
@@ -96,7 +96,12 @@ export default function WebsiteTypeStep({ formData, updateFormData }: WebsiteTyp
                     : "bg-[#1a1c4b] text-indigo-300 group-hover:text-indigo-200 group-hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                 }`}
               >
-                {React.cloneElement(item.icon as React.ReactElement, { className: "h-4 w-4 sm:h-6 sm:w-6" })}
+                
+                {React.cloneElement(item.icon as React.ReactElement<{ className?: string }>, {
+  className: clsx(item.icon.props?.className || '', 'h-4 w-4 sm:h-6 sm:w-6')
+})}
+
+
               </div>
               <h3
                 className={`text-sm sm:text-lg font-medium mb-1 sm:mb-2 transition-all duration-300 ${
