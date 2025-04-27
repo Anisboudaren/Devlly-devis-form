@@ -110,7 +110,7 @@ export default function SupplementsStep({ formData, updateFormData }: Supplement
                       : "bg-[#1a1c4b] text-indigo-300 group-hover:text-indigo-200 group-hover:shadow-[0_0_10px_rgba(79,70,229,0.2)]"
                   }`}
                 >
-                  {React.cloneElement(supplement.icon as React.ReactElement, { className: "h-4 w-4 sm:h-5 sm:w-5" })}
+                  {React.cloneElement(supplement.icon as React.ReactElement)}
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-0.5 sm:mb-1">
